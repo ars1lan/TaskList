@@ -1,18 +1,22 @@
 @extends('layouts.app')
 @section('title','The List of Tasks!')
 @section('content')
-<div>
-    <a href="{{route('tasks.create')}}">Add Task!</a>
-</div>
+<nav class="mb-4">
+    <a href="{{route('tasks.create')}}" class="font-medium text-grey-700 underline decoration-pink-500">Add Task!</a>
+</nav>
 <div>
     @forelse ($tasks as $task)
-    <div><a href="{{route('tasks.show',['task'=>$task->id])}}">{{$task->title}}</a></div>
+    <div>
+        <a href="{{route('tasks.show',['task'=>$task->id])}}" @class(['line-through'=>$task->completed])>
+            {{$task->title}}
+        </a>
+    </div>
     @empty
     There are no tasks avaliable
     @endforelse
 </div>
 @if ($tasks->count())
-<nav>
+<nav class="mt-4">
     {{$tasks->links()}}
 </nav>
 
