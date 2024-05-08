@@ -2,7 +2,7 @@
 @section('title',$task->title)
 @section('content')
 <div class="mb-4">
-    <a href="{{route('tasks.index')}}" class="font-medium text-grey-700 underline decoration-pink-500">⬅ Go Back</a>
+    <a href="{{route('tasks.index')}}" class="link">⬅ Go Back</a>
 </div>
 <p class="mb-4 text-slate-700">{{$task->description}}</p>
 @if ($task->long_description)

@@ -2,7 +2,7 @@
 @section('title','The List of Tasks!')
 @section('content')
 <nav class="mb-4">
-    <a href="{{route('tasks.create')}}" class="font-medium text-grey-700 underline decoration-pink-500">Add Task!</a>
+    <a href="{{route('tasks.create')}}" class="link">Add Task!</a>
 </nav>
 <div>
     @forelse ($tasks as $task)
@@ -19,6 +19,5 @@
 <nav class="mt-4">
     {{$tasks->links()}}
 </nav>
-
 @endif
 @endsection
